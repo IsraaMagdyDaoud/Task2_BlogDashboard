@@ -5,6 +5,9 @@
   padding: 20px;
   position: relative;
   transition: transform 0.3s, box-shadow 0.3s;
+  display: flex;
+  flex-direction: column;
+  /* overflow: hidden; */
 }
 
 .postCard:hover {
@@ -44,9 +47,14 @@
 .content {
   word-wrap: break-word;
   overflow-wrap: break-word;
+  white-space: normal;
+  max-height: 100%;
+
   color: #7f8c8d;
   margin-bottom: 15px;
   line-height: 1.5;
+  overflow-y: auto;
+  flex: 1;
 }
 
 .meta {
@@ -60,6 +68,7 @@
 .actions {
   display: flex;
   gap: 10px;
+  margin-top: auto;
 }
 
 .button {

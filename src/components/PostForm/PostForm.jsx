@@ -63,8 +63,15 @@ export default function PostForm({ onSubmit, initialData = {} }) {
           onChange={handleChange}
           className={`${styles.input} ${errors.title ? styles.inputError : ""}`}
           placeholder="Enter post title"
+          aria-placeholder="Enter your post title here....."
+          aria-invalid={!!errors.title}
+          aria-describedby={errors.title ? "title-error" : undefined}
         />
-        {errors.title && <p className={styles.errorText}>{errors.title}</p>}
+        {errors.title && (
+          <p id="title-error" className={styles.errorText} role="alert">
+            {errors.title}
+          </p>
+        )}
       </div>
 
       <div className={styles.formGroup}>
@@ -81,8 +88,14 @@ export default function PostForm({ onSubmit, initialData = {} }) {
           }`}
           placeholder="Write your post content here..."
           rows={10}
+          aria-invalid={!!errors.content}
+          aria-describedby={errors.content ? "content-error" : undefined}
         />
-        {errors.content && <p className={styles.errorText}>{errors.content}</p>}
+        {errors.content && (
+          <p id="content-error" className={styles.errorText} role="alert">
+            {errors.content}
+          </p>
+        )}
       </div>
 
       <div className={styles.formGroup}>
@@ -102,7 +115,14 @@ export default function PostForm({ onSubmit, initialData = {} }) {
       </div>
 
       <div className={styles.buttonGroup}>
-        <button type="submit" className={styles.submitButton}>
+        <button
+          type="submit"
+          title="submit Form"
+          className={styles.submitButton}
+          aria-label={
+            initialData.id ? "Update existing post" : "Create new post"
+          }
+        >
           {initialData.id ? "Update Post" : "Create Post"}
         </button>
       </div>

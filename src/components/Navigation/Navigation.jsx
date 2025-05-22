@@ -22,7 +22,11 @@ export default function Navigation() {
   return (
     <nav className={styles.navigation}>
       <div className={styles.fullLogo}>
-        <img src={logo} alt="logo image" className={styles.logo} />
+        <img
+          src={logo}
+          alt="Icon of a pulse waveform enclosed within a circle"
+          className={styles.logo}
+        />
         <div className={styles.logoName}>PostPulse</div>
       </div>
 

@@ -33,9 +33,11 @@ export default function Login() {
   };
 
   return (
-    <div className={styles.loginContainer}>
-      <div className={styles.loginCard}>
-        <h1 className={styles.title}>PostPulse</h1>
+    <div className={styles.loginContainer} aria-labelledby="login-heading">
+      <section className={styles.loginCard}>
+        <h1 id="login-heading" className={styles.title}>
+          PostPulse
+        </h1>
         <h2 className={styles.subtitle}>Login </h2>
 
         {error && <div className={styles.errorMessage}>{error}</div>}
@@ -52,6 +54,7 @@ export default function Login() {
               required
               className={styles.input}
               placeholder="Enter your email"
+              aria-required="true"
             />
           </div>
 
@@ -66,6 +69,7 @@ export default function Login() {
               required
               className={styles.input}
               placeholder="Enter your password"
+              aria-required="true"
             />
           </div>
 
@@ -73,6 +77,7 @@ export default function Login() {
             type="submit"
             className={styles.loginButton}
             disabled={status === "loading"}
+            aria-busy={status === "loading"}
           >
             {status === "loading" ? "Signing in..." : "Sign In"}
           </button>
@@ -83,11 +88,12 @@ export default function Login() {
           <button
             onClick={() => navigate("/signup")}
             className={styles.signupLink}
+            aria-label="Go to sign up page"
           >
             Sign Up
           </button>
         </p>
-      </div>
+      </section>
     </div>
   );
 }

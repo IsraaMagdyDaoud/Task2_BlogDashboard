@@ -28,9 +28,16 @@ export default function NewPost() {
   };
 
   return (
-    <div className={styles.newPostContainer}>
-      <h1 className={styles.pageTitle}>Create New Post</h1>
-      <PostForm onSubmit={handleSubmit} />
-    </div>
+    <>
+      <section
+        className={styles.newPostContainer}
+        aria-labelledby="Create-new-post"
+      >
+        <h1 id="Create-new-post" className={styles.pageTitle}>
+          Create New Post
+        </h1>
+        <PostForm onSubmit={handleSubmit} />
+      </section>
+    </>
   );
 }

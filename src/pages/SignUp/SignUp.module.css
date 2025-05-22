@@ -90,13 +90,13 @@
 .loginText {
   text-align: center;
   margin-top: 20px;
-  color: #7f8c8d;
+  color: #3c4243;
 }
 
 .loginLink {
   background: none;
   border: none;
-  color: #3498db;
+  color: #0b6bac;
   cursor: pointer;
   font-weight: 500;
 }

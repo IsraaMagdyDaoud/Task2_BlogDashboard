@@ -37,7 +37,16 @@ export default function EditPost() {
     }
   };
   if (!post) {
-    return <div>Loading post.....</div>;
+    return (
+      <div
+        className={styles.loading}
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+      >
+        Loading post.....
+      </div>
+    );
   }
   const initialData = {
     id: post.id,
@@ -46,8 +55,10 @@ export default function EditPost() {
     status: post.status,
   };
   return (
-    <div className={styles.EditPostContainer}>
-      <h1 className={styles.pageTitle}>Edit Post</h1>
+    <div className={styles.EditPostContainer} aria-labelledby="edit-post-title">
+      <h1 id="edit-post-title" className={styles.pageTitle}>
+        Edit Post
+      </h1>
       <PostForm onSubmit={handleSubmit} initialData={initialData} />
     </div>
   );

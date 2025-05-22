@@ -42,8 +42,17 @@ export default function Posts() {
   }
 
   return (
-    <div className={styles.postsContainer}>
-      <h1 className={styles.pageTitle}>All Posts</h1>
+    <section
+      className={styles.postsContainer}
+      aria-labelledby="posts-title-page"
+    >
+      <h1
+        id="posts-title-page"
+        className={styles.pageTitle}
+        aria-label="All Posts"
+      >
+        All Posts
+      </h1>
 
       {posts.length === 0 ? (
         <p className={styles.noPosts}>No posts found. Create a new post!</p>
@@ -51,11 +60,13 @@ export default function Posts() {
         <>
           <div className={styles.postsGrid}>
             {currentPosts.map((post) => (
-              <PostCard
-                key={post.id}
-                post={post}
-                onDelete={() => handleDeletePost(post.id)}
-              />
+              <article key={post.id} aria-label={`Post titled ${post.title}`}>
+                <PostCard
+                  key={post.id}
+                  post={post}
+                  onDelete={() => handleDeletePost(post.id)}
+                />
+              </article>
             ))}
           </div>
 
@@ -68,6 +79,6 @@ export default function Posts() {
           )}
         </>
       )}
-    </div>
+    </section>
   );
 }

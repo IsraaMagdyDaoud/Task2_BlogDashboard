@@ -17,7 +17,10 @@ export default function PostCard({ post, onDelete }) {
   };
 
   return (
-    <div className={styles.postCard}>
+    <article
+      className={styles.postCard}
+      aria-labelledby={`post-title-${post.id}`}
+    >
       <div className={styles.status}>
         <span
           className={
@@ -28,7 +31,9 @@ export default function PostCard({ post, onDelete }) {
         </span>
       </div>
 
-      <h2 className={styles.title}>{post.title}</h2>
+      <h2 id={`post-title-${post.id}`} className={styles.title}>
+        {post.title}
+      </h2>
       <p className={styles.content}>{truncateContent(post.content)}</p>
 
       <div className={styles.meta}>
@@ -51,6 +56,6 @@ export default function PostCard({ post, onDelete }) {
           Delete
         </button>
       </div>
-    </div>
+    </article>
   );
 }

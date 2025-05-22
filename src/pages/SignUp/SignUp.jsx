@@ -60,9 +60,14 @@ export default function SignUp() {
   };
 
   return (
-    <div className={styles.signupContainer}>
+    <section
+      className={styles.signupContainer}
+      aria-labelledby="signup-heading"
+    >
       <div className={styles.signupCard}>
-        <h1 className={styles.title}>PostPulse</h1>
+        <h1 id="signup-heading" className={styles.title}>
+          PostPulse
+        </h1>
         <h2 className={styles.subtitle}>Create an Account</h2>
 
         {(validationError || error) && (
@@ -81,6 +86,7 @@ export default function SignUp() {
               required
               className={styles.input}
               placeholder="Enter your name"
+              aria-required="true"
             />
           </div>
 
@@ -95,6 +101,7 @@ export default function SignUp() {
               required
               className={styles.input}
               placeholder="Enter your email"
+              aria-required="true"
             />
           </div>
 
@@ -109,6 +116,7 @@ export default function SignUp() {
               required
               className={styles.input}
               placeholder="Create a password"
+              aria-required="true"
             />
           </div>
 
@@ -123,6 +131,7 @@ export default function SignUp() {
               required
               className={styles.input}
               placeholder="Confirm your password"
+              aria-required="true"
             />
           </div>
 
@@ -130,6 +139,7 @@ export default function SignUp() {
             type="submit"
             className={styles.signupButton}
             disabled={status === "loading"}
+            aria-busy={status === "loading"}
           >
             {status === "loading" ? "Creating Account..." : "Sign Up"}
           </button>
@@ -140,11 +150,12 @@ export default function SignUp() {
           <button
             onClick={() => navigate("/login")}
             className={styles.loginLink}
+            aria-label="Go to login page"
           >
             Sign In
           </button>
         </p>
       </div>
-    </div>
+    </section>
   );
 }

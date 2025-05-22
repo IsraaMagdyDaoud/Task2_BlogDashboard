@@ -45,39 +45,73 @@ export default function Dashboard() {
     : null;
 
   return (
-    <div className={styles.dashboardContainer}>
-      <h1 className={styles.pageTitle}>Dashboard</h1>
+    <main
+      className={styles.dashboardContainer}
+      aria-labelledby="dashboard-title"
+    >
+      <h1 id="dashboard-title" className={styles.pageTitle}>
+        Dashboard
+      </h1>
 
       <div className={styles.dashboardGrid}>
-        <div className={styles.userSection}>
-          <h2 className={styles.Info}>Profile info</h2>
+        <section
+          className={styles.userSection}
+          aria-labelledby="profile-info-heading"
+        >
+          <h2 id="profile-info-heading" className={styles.Info}>
+            Profile info
+          </h2>
           <UserInfo user={userProfile} />
-        </div>
+        </section>
 
-        <div className={styles.statsSection}>
-          <h2>Your Blog </h2>
+        <section
+          className={styles.statsSection}
+          aria-labelledby="blog-stats-heading"
+        >
+          <h2 id="blog-stats-heading">Your Blog </h2>
 
           <div className={styles.statsGrid}>
-            <div className={styles.statCard}>
-              <h3>Total Posts</h3>
+            <div
+              className={styles.statCard}
+              role="region"
+              aria-labelledby="total-posts"
+            >
+              <h3 id="total-posts">Total Posts</h3>
               <p className={styles.statValue}>{userStats.totalPosts}</p>
             </div>
 
-            <div className={styles.statCard}>
-              <h3>Published</h3>
+            <div
+              className={styles.statCard}
+              role="region"
+              aria-labelledby="published-posts"
+            >
+              <h3 id="published-posts">Published</h3>
               <p className={styles.statValue}>{userStats.publishedPosts}</p>
             </div>
 
-            <div className={styles.statCard}>
-              <h3>Drafts</h3>
+            <div
+              className={styles.statCard}
+              role="region"
+              aria-labelledby="draft-posts"
+            >
+              <h3 id="draft-posts">Drafts</h3>
               <p className={styles.statValue}>{userStats.draftPosts}</p>
             </div>
           </div>
 
-          <h3 className={styles.recentTitle}>Recent Activity</h3>
-          <div className={styles.recentPosts}>
+          <h3 className={styles.recentTitle} id="recent-activity-heading">
+            Recent Activity
+          </h3>
+          <div
+            className={styles.recentPosts}
+            aria-labelledby="recent-activity-heading"
+          >
             {posts.slice(0, 3).map((post) => (
-              <div key={post.id} className={styles.recentPost}>
+              <article
+                key={post.id}
+                className={styles.recentPost}
+                aria-label={`Post titled ${post.title}`}
+              >
                 <h4>{post.title}</h4>
                 <p>{post.status === "published" ? "Published" : "Draft"}</p>
                 <p className={styles.date}>
@@ -87,12 +121,12 @@ export default function Dashboard() {
                       ).toLocaleDateString()
                     : "N/A"}
                 </p>
-              </div>
+              </article>
             ))}
             {posts.length === 0 && <p>No recent activity</p>}
           </div>
-        </div>
+        </section>
       </div>
-    </div>
+    </main>
   );
 }

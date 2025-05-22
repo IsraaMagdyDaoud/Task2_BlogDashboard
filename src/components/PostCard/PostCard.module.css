@@ -26,7 +26,7 @@
   color: white;
   padding: 3px 8px;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .draft {
@@ -34,7 +34,7 @@
   color: white;
   padding: 3px 8px;
   border-radius: 4px;
-  font-size: 0.8rem;
+  font-size: 1rem;
 }
 
 .title {
@@ -61,7 +61,7 @@
   display: flex;
   gap: 8px;
   color: #95a5a6;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 15px;
 }
 

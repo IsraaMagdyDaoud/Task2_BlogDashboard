@@ -46,7 +46,11 @@ export default function Posts() {
       className={styles.postsContainer}
       aria-labelledby="posts-title-page"
     >
-      <h1 id="posts-title-page" className={styles.pageTitle}>
+      <h1
+        id="posts-title-page"
+        className={styles.pageTitle}
+        aria-label="All Posts"
+      >
         All Posts
       </h1>
 

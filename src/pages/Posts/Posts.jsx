@@ -60,11 +60,7 @@ export default function Posts() {
         <>
           <div className={styles.postsGrid}>
             {currentPosts.map((post) => (
-              <article
-                key={post.id}
-                role="listitem"
-                aria-label={`Post titled ${post.title}`}
-              >
+              <article key={post.id} aria-label={`Post titled ${post.title}`}>
                 <PostCard
                   key={post.id}
                   post={post}

@@ -82,12 +82,12 @@
 
 .recentPost p {
   margin: 5px 0;
-  color: #7f8c8d;
+  color: #3c4243;
 }
 
 .date {
   font-size: 0.85rem;
-  color: #95a5a6;
+  color: #3c4243;
 }
 
 @media (max-width: 768px) {

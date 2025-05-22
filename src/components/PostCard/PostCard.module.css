@@ -23,7 +23,7 @@
 
 .published {
   background-color: #2ecc71;
-  color: white;
+  color: rgb(8, 8, 8);
   padding: 3px 8px;
   border-radius: 4px;
   font-size: 1rem;
@@ -31,7 +31,7 @@
 
 .draft {
   background-color: #f39c12;
-  color: white;
+  color: rgb(8, 8, 8);
   padding: 3px 8px;
   border-radius: 4px;
   font-size: 1rem;
@@ -50,7 +50,7 @@
   white-space: normal;
   max-height: 100%;
 
-  color: #7f8c8d;
+  color: #3c4243;
   margin-bottom: 15px;
   line-height: 1.5;
   overflow-y: auto;
@@ -60,7 +60,7 @@
 .meta {
   display: flex;
   gap: 8px;
-  color: #95a5a6;
+  color: #3c4243;
   font-size: 1rem;
   margin-bottom: 15px;
 }

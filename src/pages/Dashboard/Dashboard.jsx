@@ -104,14 +104,12 @@ export default function Dashboard() {
           </h3>
           <div
             className={styles.recentPosts}
-            role="list"
             aria-labelledby="recent-activity-heading"
           >
             {posts.slice(0, 3).map((post) => (
               <article
                 key={post.id}
                 className={styles.recentPost}
-                role="listitem"
                 aria-label={`Post titled ${post.title}`}
               >
                 <h4>{post.title}</h4>

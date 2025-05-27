@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPosts, deletePost } from "../../redux/thunks/postThunks";
 import { PostCard, Pagination } from "../../components/index";
-import styles from "./Posts.module.css";
+import styles from "./Posts.module.scss";
 
 export default function Posts() {
   const dispatch = useDispatch();

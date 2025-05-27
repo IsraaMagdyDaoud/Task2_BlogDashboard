@@ -1,0 +1,100 @@
+@use "variable" as *;
+
+@mixin respond-to($breakpoint) {
+  @if $breakpoint ==xs {
+    @media (min-width: $breakpoint-xs) {
+      @content;
+    }
+  }
+  @if $breakpoint ==sm {
+    @media (min-width: $breakpoint-sm) {
+      @content;
+    }
+  }
+  @if $breakpoint ==md {
+    @media (min-width: $breakpoint-md) {
+      @content;
+    }
+  }
+  @if $breakpoint ==lg {
+    @media (min-width: $breakpoint-lg) {
+      @content;
+    }
+  }
+  @if $breakpoint ==xl {
+    @media (min-width: $breakpoint-xl) {
+      @content;
+    }
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+@mixin card-shadow($level: 1) {
+  @if $level==1 {
+    box-shadow: $shadow-md;
+  }
+  @if $level==2 {
+    box-shadow: $shadow-lg;
+  }
+  @if $level==3 {
+    box-shadow: $shadow-xl;
+  }
+}
+
+@mixin button-variant($bg-color, $text-color: white, $hover-darken: 10%) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: 1px solid $bg-color;
+  &:hover:not(:disabled) {
+    background-color: darken($bg-color, $hover-darken);
+    border-color: darken($bg-color, $hover-darken);
+  }
+  &:focus {
+    outline: 2px solid rgba($bg-color, 0.3);
+    outline-offset: 2px;
+  }
+}
+
+@mixin truncate-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin truncate-multiline($lines: 2) {
+  display: -webkit-box;
+  -webkit-line-clamp: $lines;
+  overflow: hidden;
+}
+
+@mixin smooth-transition($properties: all, $duration: $transition-base) {
+  transition: $properties $duration;
+}
+
+@mixin status-badge($bg-color, $text-color: white) {
+  background-color: $bg-color;
+  color: $text-color;
+  padding: 3px 8px;
+  border-radius: $border-redius-sm;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-medium;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}

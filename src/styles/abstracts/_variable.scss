@@ -1,0 +1,57 @@
+$color-primary: #3498bd;
+$color-secondary: #2ecc71;
+$color-accent: #e74c3c;
+$color-success: #2ecc71;
+$color-warning: #f39c12;
+$color-danger: #e74c3c;
+$color-info: #3498bd;
+
+$color-text-primary: #2c3e50;
+$color-text-secondary: #3c4243;
+$color-text-muted: #95a5a6;
+
+$color-background: #ffffff;
+$color-background-light: #f8f9fa;
+$color-background-dark: #2c3e50;
+
+$spacing-xs: 0.25rem;
+$spacing-sm: 0.5rem;
+$spacing-md: 1rem;
+$spacing-lg: 1.25rem;
+$spacing-xl: 1.5rem;
+$spacing-2xl: 2rem;
+
+$font-family-primary: "Inter", "Segoe UI", Tohoma, Geneva, Verdana, sans-serif;
+$font-family-secondary: "Georgia", serif;
+
+$font-size-xs: 0.75rem;
+$font-size-sm: 0.875rem;
+$font-size-md: 1rem;
+$font-size-lg: 1.125rem;
+$font-size-xl: 1.25rem;
+$font-size-2xl: 1.5rem;
+
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+$breakpoint-xs: 465;
+$breakpoint-sm: 640;
+$breakpoint-md: 768;
+$breakpoint-lg: 1024;
+$breakpoint-xl: 1280;
+
+$border-redius-sm: 4px;
+$border-redius-md: 6px;
+$border-redius-lg: 8px;
+$border-redius-xl: 12px;
+
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+$shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+
+$transition-fast: 0.15s ease;
+$transition-base: 0.2s ease;
+$transition-slow: 0.3s ease;

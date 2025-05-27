@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./PostCard.module.css";
+import styles from "./PostCard.module.scss";
 import { useNavigate } from "react-router-dom";
 
 export default function PostCard({ post, onDelete }) {

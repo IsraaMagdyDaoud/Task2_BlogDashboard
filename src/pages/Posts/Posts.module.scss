@@ -1,0 +1,73 @@
+@use "../../styles/abstracts/index" as *;
+@use "sass:color";
+
+.postsContainer {
+  padding: $spacing-lg;
+  @include respond-to(md) {
+    padding: $spacing-xl;
+  }
+  @include respond-to(lg) {
+    padding: $spacing-2xl;
+  }
+}
+
+.pageTitle {
+  margin-bottom: $spacing-lg;
+  color: $color-text-primary;
+  font-family: $font-family-primary;
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+
+  @include respond-to(md) {
+    margin-bottom: $spacing-xl;
+    font-size: 2rem;
+  }
+}
+
+.postsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: $spacing-lg;
+  @include respond-to(xs) {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: $spacing-md;
+  }
+  @include respond-to(sm) {
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: $spacing-lg;
+  }
+  @include respond-to(lg) {
+    gap: $spacing-xl;
+  }
+}
+
+.loading {
+  @include flex-center;
+  padding: $spacing-2xl * 2;
+  font-size: $spacing-xl;
+  font-family: $font-family-primary;
+  color: $color-text-muted;
+  font-weight: $font-weight-medium;
+  @include smooth-transition();
+}
+
+.error {
+  padding: $spacing-lg;
+  background-color: color.adjust($color-danger, $lightness: 45%);
+  color: $color-danger;
+  border-radius: $border-redius-md;
+  border: 1px solid color.adjust($color-danger, $lightness: 30%);
+  font-family: $font-family-primary;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  @include card-shadow(1);
+}
+
+.noPosts {
+  text-align: center;
+  padding: $spacing-2xl * 2;
+  color: $color-text-secondary;
+  font-family: $font-family-primary;
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+}
